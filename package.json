@@ -1,0 +1,35 @@
+{
+  "name": "rpg",
+  "version": "1.0.0",
+  "description": "Simple authentication system",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+  "node": "6.10.3",
+  "npm": "3.10.10"
+},
+  "author": "Duhtiks",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "connect-flash": "*",
+    "consolidate": "^0.14.5",
+    "cookie-parser": "^1.4.1",
+    "ejs": "^2.5.6",
+    "ejs-lint": "^0.3.0",
+    "express": "*",
+    "express-handlebars": "*",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "mongodb": "*",
+    "mongoose": "*",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-local": "*"
+  }
+}
