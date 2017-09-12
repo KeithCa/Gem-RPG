@@ -5,6 +5,7 @@ class Basetile{
     this.desc = desc;
     this.symbol = symbol;
     this.moveable = moveable;
+    this.objtype = "Tile";
  }
 
  }

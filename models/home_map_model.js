@@ -40,3 +40,15 @@ module.exports.enemies ={
     }
   }
 }
+
+//test objects here
+/*
+module.exports.enemies ={
+  yarth : {
+    name : "Yarth",
+    hp : 50,
+    attack : function(){
+      console.log("this is an attack");
+    }
+  }
+}*/

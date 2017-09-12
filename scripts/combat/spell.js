@@ -6,6 +6,7 @@ class Spell{
     this.min_dmg = min_dmg;
     this.max_dmg = max_dmg;
     this.spell_cd = spell_cd;
+    this.objtype = "Spell";
  }
 
  }

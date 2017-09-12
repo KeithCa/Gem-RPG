@@ -1,54 +1,9 @@
 <% include layouts/header %>
 <style type="text/css">
-  td {
-    width: 30px;
-    height: 30px;
-  }
-  table{
-    border-color: black;
-    border-width: 1px;
-  }
-
-  .wood {
-	width: 30px;
-    height: 30px;
-    font-size: 20px;
-    text-align: center;
-}
 
 button{
   height:25px;
   width:65px;
-}
-
-#commandButtons{
-  display:block;
-margin-left:280px;
-width:65px;
-}
-
-#playArea{
-    float:left;
-}
-
-#container{
-  margin-left: auto;
-  margin-right: auto;
-  width:550px;
-  height:271px;
-}
-
-
-.soil {
-	width: 30px;
-    height: 30px;
-    font-size: 20px;
-    text-align: center;
-	background-color: #7D5D16;
-}
-
-.selected{
-  border:2px solid white;
 }
 
 </style>
@@ -77,15 +32,24 @@ var lastClicked;
 var selected;
 var waiting = false;
 var color = 'black';
-var mapArray = <%- JSON.stringify(mapArray) %>;
+var mapArray_1 = <%- JSON.stringify(mapArray) %>;
+var enemies = <%- JSON.stringify(enemies) %>;
+var mapArray = mapArray_1["training_area_actual"];
+mapArray[enemies["Yarth"].loc_y][enemies["Yarth"].loc_x] = enemies["Yarth"];
 var html = '<table id="mapTable">';
 for (var y = 0; y < mapArray.length; y++) {
 html += '<tr>';
 for (var x = 0; x < mapArray[y].length; x++) {
-if (mapArray[y][x].name == "Grass")
-  html += '<td id = "cell'+x+'-'+y+'" class = "grass"></td>'
-else
-  html += '<td id = "cell'+x+'-'+y+'" class = "soil""></td>'
+if (mapArray[y][x].objtype == "Tile"){
+  if(mapArray[y][x].symbol != null){
+    html += '<td id = "cell'+x+'-'+y+'">'+mapArray[y][x].symbol+'</td>'
+  }
+  else{
+  html += '<td id = "cell'+x+'-'+y+'"></td>'
+  }
+}else if(mapArray[y][x].objtype == "Enemy"){
+  html += '<td id = "cell'+x+'-'+y+'">x</td>'
+}
 }
 html += '</tr>';
 }
