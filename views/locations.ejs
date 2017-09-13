@@ -24,18 +24,30 @@ button{
 </div>
 
 <script>
-var socket = io();
-socket.on('connect', function() {
-  console.log(socket.id);
-});
-var lastClicked;
+var username = "<%= username %>";
+var curX = 0;
+var curY = 0;
 var selected;
-var waiting = false;
-var color = 'black';
-var mapArray_1 = <%- JSON.stringify(mapArray) %>;
-var enemies = <%- JSON.stringify(enemies) %>;
-var mapArray = mapArray_1["training_area_actual"];
-mapArray[enemies["Yarth"].loc_y][enemies["Yarth"].loc_x] = enemies["Yarth"];
+var lastClicked;
+console.log(username);
+var socket = io();
+setUsername();
+
+function setUsername() {
+socket.emit('add user', username);
+}
+
+socket.on('startMap', function (data) {
+socket.emit('getMap');
+});
+
+socket.on('heresTheMap', function (response){
+
+var mapArray_1 = response.loc_info;
+var enemies = response.loc_info["Enemies"];
+
+var mapArray = mapArray_1["actual"];
+
 var html = '<table id="mapTable">';
 for (var y = 0; y < mapArray.length; y++) {
 html += '<tr>';
@@ -49,6 +61,8 @@ if (mapArray[y][x].objtype == "Tile"){
   }
 }else if(mapArray[y][x].objtype == "Enemy"){
   html += '<td id = "cell'+x+'-'+y+'">x</td>'
+}else if(mapArray[y][x].objtype == "Player"){
+  html += '<td id = "cell'+x+'-'+y+'">P1</td>'
 }
 }
 html += '</tr>';
@@ -65,6 +79,7 @@ $('#playArea #mapTable td').on('click', function() {
     selected = $(this).attr('id')
 });
 });
+});//end heresTheMap
 
 function attack(){
   console.log(selected);

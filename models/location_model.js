@@ -12,10 +12,24 @@ var PlSchema = mongoose.Schema({
 	pl_name: {
 		type: String
 	},
+  objtype: {
+    type: String
+  },
 	loc: {
 		type: String
-
 	},
+  area: {
+    type: String
+  },
+  pl_lvl: {
+    type: String
+  },
+  loc_x: {
+    type: Number
+  },
+  loc_y: {
+    type: Number
+  },
   pl_free_stats: {
 		type: Number
 	},
@@ -41,7 +55,6 @@ var PlSchema = mongoose.Schema({
  },
  inventory: [{
    item_name: String,
-   item_type: String,
  }
  ]
 });

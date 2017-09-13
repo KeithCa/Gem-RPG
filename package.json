@@ -1,7 +1,7 @@
 {
   "name": "rpg",
   "version": "1.0.0",
-  "description": "Simple authentication system",
+  "description": "Soul-gem RPG",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -11,8 +11,8 @@
     "node": "6.10.3",
     "npm": "3.10.10"
   },
-  "author": "Duhtiks",
-  "license": "ISC",
+  "author": "Keith Carroll",
+  "license": "",
   "dependencies": {
     "bcryptjs": "*",
     "body-parser": "*",

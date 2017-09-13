@@ -5,7 +5,8 @@ var wood = tiles.tiles.wood;
 Enemies.enemy.yarth.loc_x = 7;
 Enemies.enemy.yarth.loc_y = 5;
 
-module.exports.location = { training_area: [
+var locations = { Home:
+ { training_area_2: [
       [wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood],
       [wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood],
       [wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood],
@@ -19,7 +20,7 @@ module.exports.location = { training_area: [
       [wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood],
       [wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood],
   ],
-  training_area_actual: [
+  training_area_2_actual: [
         [wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood],
         [wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood],
         [wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood],
@@ -32,12 +33,10 @@ module.exports.location = { training_area: [
         [wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood],
         [wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood],
         [wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood,wood],
-    ]
+    ],
+    Yarth_2 : Enemies.enemy.yarth
+}
 }
 
 
-
-
-module.exports.enemies = {
-  Yarth : Enemies.enemy.yarth
-}
+module.exports = locations;

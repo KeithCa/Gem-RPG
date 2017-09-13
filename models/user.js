@@ -56,22 +56,26 @@ module.exports.insertDocument = function(db,user_id, pl_name, callback) {
 
     "user_id" : user_id,
     "pl_name" : pl_name,
+		"objtype" : "Player",
+		"pl_lvl" : 1,
     "loc" : "Home",
+		"area": "training_area",
+		"loc_x": 0,
+		"loc_y": 0,
     "pl_free_stats" : 0,
     "pl_hp" : 100,
     "pl_exp" : 0,
     "pl_gold" : 1,
     "pl_class" : "Adventurer",
     "equipment" : {
-         "r_hand_id" : 0,
-         "l_hand_id" : 0,
-         "chest_id" : 0,
-         "boots_id" : 0,
-         "helm_id" : 0
+    "r_hand_id" : 0,
+    "l_hand_id" : 0,
+    "chest_id" : 0,
+    "boots_id" : 0,
+    "helm_id" : 0
      },
 		 "inventory" :[{
-			 "item_name" : "Health Potion",
-			 "item_type" : "Potion"
+			 "item_name" : "Health Potion"
 		 }
 		 ]
    }, function(err, result) {
